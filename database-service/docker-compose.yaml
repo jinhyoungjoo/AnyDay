@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  database:
+    image: mysql:latest
+
+    # TODO: Set local data storage path from environment variable.
+    volumes:
+      - "$HOME/data/mysql:/var/lib/mysql"
+
+    # TODO: Set port from environment variable.
+    ports:
+      - "3307:3306"
+
+    # TODO: Set username/password from environment variable.
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+    # TODO: Add initial loading script for creating database (Spring doesn't make it automatically for some reason)
+
+    
