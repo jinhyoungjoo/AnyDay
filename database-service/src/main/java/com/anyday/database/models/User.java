@@ -1,6 +1,7 @@
 package com.anyday.database.models;
 
 import jakarta.persistence.*;
+import java.util.*;
 import lombok.*;
 
 @Data
@@ -17,4 +18,7 @@ public class User {
 
   @Column(unique = true)
   private String email;
+
+  @OneToMany(mappedBy = "user_id")
+  private List<Journal> journals;
 }
